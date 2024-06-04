@@ -17,4 +17,15 @@ func main() {
 	array3 := [...]int{1, 2, 3}
 	fmt.Println(array3)
 	// array3[4] = 12 nao é permitido
+
+	// SLICE
+	slice := []int{1, 2, 3}
+
+	//adicionando items ao slice
+	slice = append(slice, 4)
+	fmt.Println(slice)
+
+	//fatiando o slice
+	// slice[1(inclusivo): 3(exclusivo)]
+	fmt.Println(slice[1:3])
 }
