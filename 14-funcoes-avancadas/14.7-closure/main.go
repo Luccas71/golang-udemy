@@ -1,6 +1,6 @@
 package main
 
-// mantem as variaveis criadas ma funçao permitindo que sejam usadas
+// mantem as variaveis criadas na funçao permitindo que sejam usadas
 import "fmt"
 
 func closure() func() {
