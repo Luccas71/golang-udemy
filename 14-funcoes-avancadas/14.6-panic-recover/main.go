@@ -6,7 +6,7 @@ import "fmt"
 	panic =>
 		mata a execução do programa,
 		nada é executado apos o panic,
-		vai chamar todos defer antes de parar,
+		vai chamar todos defer antes de parar, mesmo que estejam fora do bloco de exec do panic
 	recover =>
 		recuperar a execução da aplicação apos um panic,
 		continua a execução e retorno o zerovalue do tipo do retorno,
@@ -32,5 +32,6 @@ func recuperarExecucao() {
 }
 
 func main() {
-	fmt.Println(media(6, 5))
+	defer fmt.Println("Teste")
+	fmt.Println(media(6, 6))
 }
