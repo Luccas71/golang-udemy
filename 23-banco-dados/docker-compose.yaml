@@ -1,0 +1,25 @@
+version: '3'
+
+services: 
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: go-udemy
+      MYSQL_PASSWORD: root
+    ports: 
+      - 3306:3306
+
+
+# docker compose up -d
+# docker-compose exec mysql bash
+# mysql -uroot -p goexpert
+
+# CRIANDO UM NOVO USER
+  # CREATE USER 'nome_user'@'localhost' IDENTIFIED BY 'senha'; 
+# garantindo privilegios ao user
+  # GRANT ALL PRIVILEGES ON nome_do_banco.* TO 'golang'@'locahost'
+# 
