@@ -2,6 +2,6 @@ POST http://localhost:5000/usuarios
 Content-Type: application/json
 
 {
-    "nome" :"Lucas",
+    "nome": "Lucas",
     "email": "lucas@email.com" 
 }

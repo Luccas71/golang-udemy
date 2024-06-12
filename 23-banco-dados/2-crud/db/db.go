@@ -7,7 +7,7 @@ import (
 )
 
 func Conectar() (*sql.DB, error) {
-	stringConexao := "golang:golan@/go-udemy?charset=utf8&parseTime=True&loc=Local"
+	stringConexao := "golang:golang@/go-udemy?charset=utf8&parseTime=True&loc=Local"
 	db, err := sql.Open("mysql", stringConexao)
 	if err != nil {
 		return nil, err
