@@ -4,7 +4,6 @@ import (
 	"crud/db"
 	"encoding/json"
 	"fmt"
-	"io"
 	"net/http"
 )
 
@@ -15,16 +14,12 @@ type usuario struct {
 }
 
 func CriarUsuario(w http.ResponseWriter, r *http.Request) {
-	corpoRequisicao, err := io.ReadAll(r.Body)
-	if err != nil {
-		w.Write([]byte("Erro ao ler corpo da requisição"))
-		return
-	}
-
 	var usuario usuario
 
-	if err = json.Unmarshal(corpoRequisicao, &usuario); err != nil {
-		w.Write([]byte("Erro ao converter usuário em struct"))
+	err := json.NewDecoder(r.Body).Decode(&usuario)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		w.Write([]byte("Erro ao converter JSON"))
 		return
 	}
 

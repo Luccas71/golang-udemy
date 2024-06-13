@@ -13,6 +13,6 @@ func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/usuarios", servidor.CriarUsuario).Methods(http.MethodPost)
 
-	fmt.Println("Rodando na porta 5000")
-	http.ListenAndServer(":5000", router)
+	fmt.Println("Rodando na porta 8000")
+	http.ListenAndServe(":8000", router)
 }
