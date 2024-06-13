@@ -14,5 +14,5 @@ func main() {
 	router.HandleFunc("/usuarios", servidor.CriarUsuario).Methods(http.MethodPost)
 
 	fmt.Println("Rodando na porta 5000")
-	http.ListenAndServe(":5000", router)
+	http.ListenAndServer(":5000", router)
 }
